@@ -1,11 +1,51 @@
 body, html {
     height: 100%;
-}
-
-.bg {
     background-image: url(../images/JimmyK.jpg);
-    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.jumbotron{
+    text-align: center;
+    margin-top: 15px;
+    background: none;
+}
+.display-4{
+    font-weight: bold;
+}
+.wordBanner {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #fff;
+}
+.card {
+    background: none;
+}
+.card-body {
+    text-align: center;
+    color: #fff;
+}
+#wins {
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 3px;
+    height: 130px;
+}
+#boneyard {
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 3px;
+    height: 130px;
+}
+#remainingGuesses {
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 3px;
+    height: 130px;
+}
+#lines {
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 3px;
+
 }

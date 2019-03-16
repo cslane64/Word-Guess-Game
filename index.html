@@ -1,14 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <div class="bg"></div>
+
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Word Guess Game</h1>
+                <h4 class="lead">Press any key to get started</h4>
+            </div>
+        </div>
+        <div class="row" id="curWord">
+            <div class="col-lg-12">
+                <h3 class="wordBanner">Current word</h3>
+            </div>
+        </div>
+        <div class="row" id="wordField">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body" id="lines">
+                        <h5>___ ___ ___ ___ ___ ___</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body" id="spacer">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="scoreRow">
+            <div class="col-lg-4" id="wins">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">WINS:</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" id="boneyard">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Used Letters:</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" id="remainingGuesses">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Remaining Guesses:</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
+
 </html>
