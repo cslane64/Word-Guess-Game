@@ -1,30 +1,32 @@
 // variables
 var wordBank = ["submarine", "dive", "torpedo", "deep", "silent", "sonar", "periscope", "missile" ];
 var chosenWord = "";
+var allLetters = [];
 var workingWord = [];
 var wrongLetters = [];
 var wins = 0;
 var guessesLeft = 8;
-var blankLines = 0;
 var wordDisplay = [];
 
+//DOM Elements
+var domLines = document.getElementById("lines");
+var domScore = document.getElementById("score");
+var domBones = document.getElementById("bones");
+var domNumGuesses = document.getElementById("numGuesses");
 // functions
 function startGame() {
+    wordDisplay = [];
+    workingWord = [];
     chosenWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-
+    
     // populate the workingWord array
     for (i=0; i< chosenWord.length; i++) {
         workingWord.push(chosenWord[i]);
     }
-
-    //set number of blank lines to be displayed on page at start of the game
-
-    blankLines = workingWord.length;
-
     // populate array that will be displayed
-
-    for (i = 0; i < workingWord.length; i++) {
+    for (i = 0; i < chosenWord.length; i++) {
         wordDisplay.push("___");
+        console.log(wordDisplay);
     }
 
     // reset all game counters
@@ -32,55 +34,63 @@ function startGame() {
     guessesLeft = 8;
     wrongLetters = [];
 
-    // populate html for start of game
-    document.getElementById("lines").innerHTML = wordDisplay.join("    ");
-    document.getElementById("score").innerHTML = wins;
-    document.getElementById("bones").innerHTML = wrongLetters;
-    document.getElementById("numGuesses").innerHTML = guessesLeft;
+    // populate html for start of game DOM elements went here
+    domLines.textContent = wordDisplay.join("   ");
+    domScore.textContent = wins;
+    domBones.textContent = wrongLetters;
+    domNumGuesses.textContent = guessesLeft;
+    
 }
-
+    // start listening for user keystrokes
     document.onkeyup = function(event) {
     var userGuess = event.key;
     var found = false;
     document.getElementById("ping").play();
-
     
+    
+    
+        
+
     for (i = 0; i < chosenWord.length; i++) {
-        if (userGuess == chosenWord[i]) {
-            wordDisplay[i] = userGuess;
-            found = true;
-            document.getElementById("lines").innerHTML = wordDisplay.join("   ");  
+        if (userGuess == chosenWord[i] && chosenWord.indexOf(userGuess === -1)) {
+            wordDisplay[i] = userGuess,
+            found = true,
+            domLines.textContent = wordDisplay.join("   ")
+            //document.getElementById("lines").innerHTML = wordDisplay.join("   ") 
         } 
     }
-        if (!found) {
+        if (!found && wrongLetters.indexOf(userGuess) === -1) {
             wrongLetters.push(userGuess);
-    }   
-
-    for(i = 0; i < wrongLetters.length; i++) {
-        if (userGuess == wrongLetters[i]) {
-            wrongLetters[i]=userGuess;
-            document.getElementById("bones").innerHTML = wrongLetters;
             guessesLeft --;
-            document.getElementById("numGuesses").innerHTML = guessesLeft;
-        }
-    }
-
-
-
-
-
-
-
-
-
-    console.log(userGuess);
-    console.log(wordDisplay);
-    console.log(chosenWord);
-    console.log(guessesLeft);
-    console.log(wrongLetters);
+            domNumGuesses.textContent = guessesLeft
+        } 
+           
     
 
+    for(i = 0; i < wrongLetters.length; i++) {
+        if (userGuess == wrongLetters[i] ) {
+            wrongLetters[i]=userGuess,
+            document.getElementById("bones").innerHTML = wrongLetters
+           // guessesLeft --,
+           // document.getElementById("numGuesses").innerHTML = guessesLeft
+        }
+    }
+    if (guessesLeft === 0) {
+        if (confirm("You Lost. Would you like to play again?")) {
+            startGame();
+        }
+        
+    }
+    console.log(workingWord);
+    console.log(wordDisplay);
+    if (workingWord.join('') === wordDisplay.join('')) {
+        wins++;
+        domScore.textContent = wins;
+        document.getElementById("dive").play();
+        startGame();
 
-}
+    }
+ }
 
-startGame();
+
+startGame()
