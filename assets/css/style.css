@@ -20,10 +20,14 @@ body, html {
 }
 .card {
     background: none;
+    border: none;
 }
 .card-body {
     text-align: center;
     color: #fff;
+}
+.audio {
+    display: none;
 }
 #wins {
     border-style: solid;
@@ -48,4 +52,7 @@ body, html {
     border-color: #ccc;
     border-width: 3px;
 
+}
+#lines{
+    font-size: 30px;
 }
