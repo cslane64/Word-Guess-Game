@@ -1,5 +1,5 @@
 // variables
-    var wordBank = ["submarine", "dive", "torpedo", "deep", "silent", "sonar", "periscope", "missile" ];
+    var wordBank = ["submarine", "dive", "torpedo", "deep", "silent", "sonar", "periscope", "missile", "nuclear", "diesel", "nautilus" ];
     var chosenWord = "";
     var allLetters = [];
     var workingWord = [];
@@ -73,7 +73,7 @@ function startGame() {
 
 // Check for loss condition
     if (guessesLeft === 0) {
-        if (confirm("You Lost. Would you like to play again?")) {
+        if (confirm("You Lost. The word was " + chosenWord +".Would you like to play again?")) {
             startGame();
         }
         

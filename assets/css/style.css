@@ -16,7 +16,7 @@ body, html {
 .wordBanner {
     text-align: center;
     margin-bottom: 25px;
-    color: #fff;
+    color: #ffff00;
 }
 .card {
     background: none;
@@ -24,33 +24,35 @@ body, html {
 }
 .card-body {
     text-align: center;
-    color: #fff;
+    color: #ffff00;
 }
 .audio {
     display: none;
 }
 #wins {
     border-style: solid;
-    border-color: #ccc;
-    border-width: 3px;
+    border-color: #ff00ff;
+    border-width: 2px;
     height: 130px;
+    
 }
 #boneyard {
     border-style: solid;
-    border-color: #ccc;
-    border-width: 3px;
+    border-color: #ff00ff;
+    border-width: 2px;
     height: 130px;
 }
 #remainingGuesses {
     border-style: solid;
-    border-color: #ccc;
-    border-width: 3px;
+    border-color: #ff00ff;
+    border-width: 2px;
     height: 130px;
 }
 #lines {
     border-style: solid;
-    border-color: #ccc;
-    border-width: 3px;
+    border-color: #ff00ff;
+    border-width: 2px;
+    margin-bottom: 5px;
 
 }
 #lines{
