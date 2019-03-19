@@ -22,15 +22,17 @@ Technologies Used
 
 
 Code Explanation
+•   *** The colors on the interface are not random. Nuclear submarines have MANY radiation warnng signs onboard
+    and they are yellow and Megenta. That is why I chose the colors that I did.
 •	HTML & Bootstrap are used to create and place elements in the grid
 •	A word bank is created and the computer selects a word randomly from that bank
-•	A ‘mirror’ array is populated with underscores (one for each letter of the             original array) and displayed to the screen to show the player how many letters        are in the word without revealing the word
-•	The onKeyup event captures the user key press, checks to see if it is in the word      selected. 
-•	If the key pressed is in the word selected the DOM is updated to reflect the           letter in the proper space in the word.
-•	If the key pressed is not in the selected word, the letter is added to the wrong       guess array and updated in the DOM
-•	On wrong guesses the number of guesses is decremented and the DOM is updated to        reflect this
+•	A ‘mirror’ array is populated with underscores (one for each letter of theoriginal array) and            displayed to the screen to show the player how many letters        are in the word without revealing the word
+•	The onKeyup event captures the user key press, checks to see if it is in the word selected. 
+•	If the key pressed is in the word selected the DOM is updated to reflect the letter in the proper space in the word.
+•	If the key pressed is not in the selected word, the letter is added to the wrong guess array and updated in the DOM
+•	On wrong guesses the number of guesses is decremented and the DOM is updated to reflect this
 •	When the number of guesses = 0, the game is over and the user loses
-•	When the user guesses all the letters of the word correctly the game is over and       the user wins. A new game will start and the Wins total is incremented by 1 and        the updated in the DOM
+•	When the user guesses all the letters of the word correctly the game is over and the user wins. A new game will start and the Wins total is incremented by 1 and the updated in the DOM
 •	CSS was used to add a more appealing visual aspect to the game
 •	Audio, and visual effects were added to complement the theme
 
